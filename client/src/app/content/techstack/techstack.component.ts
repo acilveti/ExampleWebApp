@@ -9,6 +9,7 @@ export class TechstackComponent implements OnInit {
 
   constructor() { }
 
+  
   ngOnInit(): void {
   }
 
