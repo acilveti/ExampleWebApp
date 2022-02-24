@@ -14,7 +14,7 @@ namespace API.Controllers;
 
 public class UsersController : ControllerBase
 {
-        private readonly DataContext context;
+    private readonly DataContext context;
     public UsersController(DataContext context)
     {
             this.context = context;

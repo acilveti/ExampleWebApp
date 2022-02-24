@@ -20,7 +20,19 @@ export class AppComponent implements OnInit{
     })
   }
 
+  getExampleData() {
+    this.http.get('https://localhost:5001/api/ExampleAPI').subscribe(response => {
+      
+      console.log(response)
+      
+    },error => {
+      console.log(error);
+    })
+  }
+
   ngOnInit(){
     this.getUsers();
+    this.getExampleData();
+    
   }
 }
