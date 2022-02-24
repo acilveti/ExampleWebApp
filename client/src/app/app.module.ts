@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { NgChartsModule } from 'ng2-charts';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,7 @@ import { ContentComponent } from './content/content.component';
 import { MainbodyComponent } from './mainbody/mainbody.component';
 import { TechstackComponent } from './content/techstack/techstack.component';
 import { TechComponent } from './content/techstack/tech/tech.component';
+import { GraphicalComponent } from './content/graphical/graphical.component';
 
 
 @NgModule({
@@ -22,6 +24,7 @@ import { TechComponent } from './content/techstack/tech/tech.component';
     MainbodyComponent,
     TechstackComponent,
     TechComponent,
+    GraphicalComponent,
     
   ],
   imports: [
@@ -29,6 +32,7 @@ import { TechComponent } from './content/techstack/tech/tech.component';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    NgChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

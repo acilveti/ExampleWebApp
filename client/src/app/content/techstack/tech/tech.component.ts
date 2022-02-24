@@ -9,6 +9,7 @@ export class TechComponent implements OnInit {
 
   constructor() { }
   @Input() techname = '';
+  @Input() tech_logo = '';
   
 
   ngOnInit(): void {
