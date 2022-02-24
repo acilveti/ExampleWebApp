@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -13,6 +13,7 @@ export class AppComponent implements OnInit{
   constructor(private http: HttpClient) {}
 
   getUsers() {
+    
     this.http.get('https://localhost:5001/api/users').subscribe(response => {
       this.users = response
     },error => {
@@ -21,8 +22,11 @@ export class AppComponent implements OnInit{
   }
 
   getExampleData() {
-    this.http.get('https://localhost:5001/api/ExampleAPI').subscribe(response => {
-      
+
+    const params = new HttpParams({fromString: 'name_tag=term'});
+    
+    this.http.request('GET', 'https://localhost:5001/api/ExampleAPI', {responseType:'json', params}).subscribe(response => {
+         
       console.log(response)
       
     },error => {

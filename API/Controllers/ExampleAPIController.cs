@@ -19,9 +19,12 @@ public class ExampleAPIController : Controller
             
     }
     [HttpGet]
-    public JsonResult ExampleAPI()
+    public JsonResult ExampleAPI(string name_tag)
     {
+        
+        
         return Json("hello");
+        
         
 
     }
