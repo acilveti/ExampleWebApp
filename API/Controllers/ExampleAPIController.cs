@@ -26,12 +26,6 @@ public class ExampleAPIController : Controller
     [HttpGet]
     public JsonResult ExampleAPI(string activity, string type, int participants, float price)
     {
-        
-        
-        var Activities = _context.Activities.ToList();
-
-        int maxIndex = _context.Activities.Max(p => p.Id);
-
         var ActivityObj = new AppActivities 
             { 
                 Activities = activity, 
@@ -41,14 +35,16 @@ public class ExampleAPIController : Controller
             };
 
         _context.Activities.Add(ActivityObj);
-        _context.SaveChanges();
-        //context.Activities.ToList();
-        /* var acti = db.Activities.ToList();*/
+        _context.SaveChanges();        
+        
+        maxIndex = _context.Activities.Max(a => a.Id);
 
-        Activities = _context.Activities.ToList();
+        var lastActivities = _context.Activities
+        .Where(a => a.Id > maxIndex-5)
+        .ToList();
+        
+        return Json(lastActivities);
 
-        maxIndex = _context.Activities.Max(p => p.Id);
-        return Json(Activities);
         
         
     }
