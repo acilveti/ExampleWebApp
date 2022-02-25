@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BackendDemoComponent } from './backend-demo.component';
+import { ActivitiesCardsComponent } from './activities-cards.component';
 
-describe('BackendDemoComponent', () => {
-  let component: BackendDemoComponent;
-  let fixture: ComponentFixture<BackendDemoComponent>;
+describe('ActivitiesCardsComponent', () => {
+  let component: ActivitiesCardsComponent;
+  let fixture: ComponentFixture<ActivitiesCardsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BackendDemoComponent ]
+      declarations: [ ActivitiesCardsComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BackendDemoComponent);
+    fixture = TestBed.createComponent(ActivitiesCardsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

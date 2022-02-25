@@ -14,7 +14,7 @@ import { TechstackComponent } from './content/techstack/techstack.component';
 import { TechComponent } from './content/techstack/tech/tech.component';
 import { GraphicalComponent } from './content/graphical/graphical.component';
 import { BoredApiInterfaceComponent } from './bored-api-interface/bored-api-interface.component';
-import { BackendDemoComponent } from './backend-demo/backend-demo.component';
+import { ActivitiesCardsComponent } from './bored-api-interface/activities-cards/activities-cards.component';
 
 
 @NgModule({
@@ -28,7 +28,7 @@ import { BackendDemoComponent } from './backend-demo/backend-demo.component';
     TechComponent,
     GraphicalComponent,
     BoredApiInterfaceComponent,
-    BackendDemoComponent,
+    ActivitiesCardsComponent,
     
   ],
   imports: [

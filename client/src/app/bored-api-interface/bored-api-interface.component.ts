@@ -8,12 +8,17 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class BoredApiInterfaceComponent implements OnInit {
 
- 
-  constructor(private http: HttpClient) {}
+  resp:any = {};
+  constructor(private http: HttpClient, ) {}
   @Input() activity = 'Press next idea';
   @Input() activity_type = '';
   @Input() activity_price = '';
   @Input() activity_participants = '';
+  
+
+  
+  
+
   
 
   ngOnInit(): void {
@@ -43,6 +48,9 @@ export class BoredApiInterfaceComponent implements OnInit {
     this.http.request('GET', 'https://localhost:5001/api/ExampleAPI', {responseType:'json', params}).subscribe(response => {
           
     console.log("this.backendAPI");
+    console.log(response);
+    this.resp = response;
+    //this.last_activity
       
     },error => {
       console.log(error);

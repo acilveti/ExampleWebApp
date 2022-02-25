@@ -37,7 +37,7 @@ public class ExampleAPIController : Controller
         _context.Activities.Add(ActivityObj);
         _context.SaveChanges();        
         
-        maxIndex = _context.Activities.Max(a => a.Id);
+        var maxIndex = _context.Activities.Max(a => a.Id);
 
         var lastActivities = _context.Activities
         .Where(a => a.Id > maxIndex-5)
