@@ -29,17 +29,19 @@ export class BoredApiInterfaceComponent implements OnInit {
       this.activity_price = response['price'];
       this.activity_participants = response['participants'];
       console.log(response);
-      this.backendAPI()
+      this.backendAPI(response)
       
     },error => {
       console.log(error);
     })
   }
 
-  backendAPI(){
+  backendAPI(response){
 
-    this.http.get('https://localhost:5001/api/ExampleAPI').subscribe(response => {
-         
+    const params = new HttpParams({fromObject: response});
+    
+    this.http.request('GET', 'https://localhost:5001/api/ExampleAPI', {responseType:'json', params}).subscribe(response => {
+          
     console.log("this.backendAPI");
       
     },error => {

@@ -24,12 +24,31 @@ public class ExampleAPIController : Controller
     }
     
     [HttpGet]
-    public JsonResult ExampleAPI()
+    public JsonResult ExampleAPI(string activity, string type, int participants, float price)
     {
-        var customers = _context.Users.ToList();
+        
+        
+        var Activities = _context.Activities.ToList();
+
+        int maxIndex = _context.Activities.Max(p => p.Id);
+
+        var ActivityObj = new AppActivities 
+            { 
+                Activities = activity, 
+                ActivitiesType = type,
+                participants = participants,
+                price = price
+            };
+
+        _context.Activities.Add(ActivityObj);
+        _context.SaveChanges();
         //context.Activities.ToList();
         /* var acti = db.Activities.ToList();*/
-        return Json(customers);
+
+        Activities = _context.Activities.ToList();
+
+        maxIndex = _context.Activities.Max(p => p.Id);
+        return Json(Activities);
         
         
     }
