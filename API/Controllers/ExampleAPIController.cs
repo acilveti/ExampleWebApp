@@ -13,19 +13,26 @@ namespace API.Controllers;
 [Route("api/[controller]")]
 
 public class ExampleAPIController : Controller
-{
-    public ExampleAPIController()
-    {
-            
-    }
-    [HttpGet]
-    public JsonResult ExampleAPI(string name_tag)
-    {
-        
-        
-        return Json("hello");
-        
-        
+{   
 
+
+    private readonly DataContext _context;
+
+    public ExampleAPIController(DataContext context)
+    {
+        _context = context;
     }
+    
+    [HttpGet]
+    public JsonResult ExampleAPI()
+    {
+        var customers = _context.Users.ToList();
+        //context.Activities.ToList();
+        /* var acti = db.Activities.ToList();*/
+        return Json(customers);
+        
+        
+    }
+
+    
 }
