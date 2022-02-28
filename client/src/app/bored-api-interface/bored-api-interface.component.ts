@@ -27,7 +27,7 @@ export class BoredApiInterfaceComponent implements OnInit {
   onButtonClick() {
     console.log('You have clicked the button.');
         
-    this.http.get('http://www.boredapi.com/api/activity/').subscribe(response => {
+    this.http.get('https://www.boredapi.com/api/activity/').subscribe(response => {
          
       this.activity = response['activity'];
       this.activity_type = response['type'];
