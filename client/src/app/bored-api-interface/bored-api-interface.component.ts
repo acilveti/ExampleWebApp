@@ -45,7 +45,7 @@ export class BoredApiInterfaceComponent implements OnInit {
 
     const params = new HttpParams({fromObject: response});
     
-    this.http.request('GET', 'https://stark-cove-76162.herokuapp.com/api/ExampleAPI', {responseType:'json', params}).subscribe(response => {
+    this.http.request('GET', '/api/ExampleAPI', {responseType:'json', params}).subscribe(response => {
           
     console.log("this.backendAPI");
     console.log(response);
