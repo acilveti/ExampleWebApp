@@ -35,8 +35,8 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit(){
-    this.getUsers();
-    this.getExampleData();
+    //this.getUsers();
+    //this.getExampleData();
     
   }
 }
