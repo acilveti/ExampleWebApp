@@ -26,7 +26,6 @@ public class ExampleAPIController : Controller
     [HttpGet]
     public JsonResult ExampleAPI(string activity, string type, int participants, float price)
     {
-        /*
         Console.WriteLine("intro api");
         var ActivityObj = new AppActivities 
             { 
@@ -44,9 +43,9 @@ public class ExampleAPIController : Controller
         var lastActivities = _context.Activities
         .Where(a => a.Id > maxIndex-5)
         .ToList();
-        Console.WriteLine("out api");*/
-        //return Json(lastActivities);
-        return Json("hello");
+        Console.WriteLine("out api");
+        return Json(lastActivities);
+        
 
         
         
