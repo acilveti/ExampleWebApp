@@ -12,6 +12,9 @@ Frameworks / Libraries:
 -Angular
 -Bootstrap
 
+Database:
+-Postgres
+
 Cloud:
 -Herpku
 
